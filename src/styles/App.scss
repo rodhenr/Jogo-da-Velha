@@ -1,7 +1,16 @@
+.aaa {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100vh;
+  justify-content: center;
+}
+
 .container {
   display: grid;
   gap: 0.5rem 0;
-  grid-template-columns: repeat(3, 110px);
+  grid-template-columns: repeat(3, 160px);
   justify-items: center;
   width: 500px;
 }
@@ -11,8 +20,31 @@
   background-color: antiquewhite;
   cursor: pointer;
   display: flex;
-  font-size: 5rem;
+  font-size: 8rem;
   justify-content: center;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+
+  span {
+      color: green;
+  }
+}
+
+.mensagem {
+  font-size: 2rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.reiniciar {
+  button {
+    background-color: red;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    height: 30px;
+    width: 180px;
+  }
 }
