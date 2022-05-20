@@ -69,15 +69,12 @@ function App() {
   }
 
   return (
-    <div className="aaa">
-      <div className="container">
+    <div className="container">
+      <h1>JOGO DA VELHA</h1>
+      <div className="jogo">
         {quadrado.map((i, key) => {
           return (
-            <div
-              className="container-quadrado"
-              key={key}
-              onClick={() => play(key)}
-            >
+            <div className="quadrado" key={key} onClick={() => play(key)}>
               <span>{i}</span>
             </div>
           );
@@ -90,7 +87,7 @@ function App() {
           </div>
         ) : turno === 9 ? (
           <div>
-            <p>EMPATE!</p>
+            <p>O JOGO TERMINOU EMPATADO!</p>
           </div>
         ) : (
           ""

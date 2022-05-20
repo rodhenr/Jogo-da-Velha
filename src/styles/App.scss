@@ -1,13 +1,20 @@
-.aaa {
+.container {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   height: 100vh;
   justify-content: center;
+
+  h1 {
+    color: #fff;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 3rem;
+    margin: 0;
+  }
 }
 
-.container {
+.jogo {
   display: grid;
   gap: 0.5rem 0;
   grid-template-columns: repeat(3, 160px);
@@ -15,36 +22,46 @@
   width: 500px;
 }
 
-.container-quadrado {
+.quadrado {
   align-items: center;
-  background-color: antiquewhite;
+  background-color: #282c34;
   cursor: pointer;
   display: flex;
-  font-size: 8rem;
+  font-size: 6rem;
   justify-content: center;
   height: 150px;
   width: 150px;
 
+  &:hover {
+    background-color: #434a56;
+  }
+
   span {
-      color: green;
+    color: #fff;
   }
 }
 
 .mensagem {
-  font-size: 2rem;
+  font-size: 1.7rem;
 
   p {
+    color: #fff;
     margin: 0;
   }
 }
 
 .reiniciar {
   button {
-    background-color: red;
+    background-color: #152139;
     border: none;
     color: #fff;
     cursor: pointer;
-    height: 30px;
-    width: 180px;
+    font-size: 0.7rem;
+    height: 35px;
+    width: 160px;
+
+    &:hover {
+      background-color: #283f6d;
+    }
   }
 }
