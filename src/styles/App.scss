@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  gap: 0.5rem 0;
+  grid-template-columns: repeat(3, 110px);
+  justify-items: center;
+  width: 500px;
+}
+
+.container-quadrado {
+  align-items: center;
+  background-color: antiquewhite;
+  cursor: pointer;
+  display: flex;
+  font-size: 5rem;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+}
