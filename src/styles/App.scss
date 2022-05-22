@@ -1,10 +1,10 @@
 .container {
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  align-content: center;
+  display: grid;
+  grid-template-rows: 50px 350px 60px 50px;
+  justify-items: center;
   height: 100vh;
-  justify-content: center;
 
   h1 {
     color: #fff;
@@ -15,6 +15,8 @@
   }
 
   @media (min-width: 900px) {
+    grid-template-rows: 80px 500px 60px 50px;
+
     h1 {
       font-size: 3rem;
     }

@@ -2,17 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles/App.scss";
 
 function App() {
-  const [quadrado, setQuadrado] = useState([
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ]);
+  const [quadrado, setQuadrado] = useState(Array(9).fill(""));
   const [over, setOver] = useState(false);
   const [turno, setTurno] = useState(0);
   const [mensagem, setMensagem] = useState("");
@@ -25,29 +15,16 @@ function App() {
   const regras = (simbolo: string) => {
     if (
       (quadrado[0] === simbolo &&
-        quadrado[1] === simbolo &&
-        quadrado[2] === simbolo) ||
-      (quadrado[3] === simbolo &&
-        quadrado[4] === simbolo &&
-        quadrado[5] === simbolo) ||
-      (quadrado[6] === simbolo &&
-        quadrado[7] === simbolo &&
-        quadrado[8] === simbolo) ||
-      (quadrado[0] === simbolo &&
-        quadrado[3] === simbolo &&
-        quadrado[6] === simbolo) ||
-      (quadrado[1] === simbolo &&
-        quadrado[4] === simbolo &&
-        quadrado[7] === simbolo) ||
-      (quadrado[2] === simbolo &&
-        quadrado[5] === simbolo &&
-        quadrado[8] === simbolo) ||
-      (quadrado[0] === simbolo &&
-        quadrado[4] === simbolo &&
-        quadrado[8] === simbolo) ||
-      (quadrado[2] === simbolo &&
-        quadrado[4] === simbolo &&
-        quadrado[6] === simbolo)
+        ((quadrado[1] === simbolo && quadrado[2] === simbolo) ||
+          (quadrado[3] === simbolo && quadrado[6] === simbolo))) ||
+      (quadrado[4] === simbolo &&
+        ((quadrado[0] === simbolo && quadrado[8] === simbolo) ||
+          (quadrado[1] === simbolo && quadrado[7] === simbolo) ||
+          (quadrado[2] === simbolo && quadrado[6] === simbolo) ||
+          (quadrado[3] === simbolo && quadrado[5] === simbolo))) ||
+      (quadrado[8] === simbolo &&
+        ((quadrado[2] === simbolo && quadrado[5] === simbolo) ||
+          (quadrado[6] === simbolo && quadrado[7] === simbolo)))
     ) {
       setOver(true);
       setMensagem(`O vencedor foi o jogador ${simbolo === "X" ? "1" : "2"}`);
