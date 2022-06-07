@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+
+import Mensagem from "./components/Mensagem";
+import Quadrados from "./components/Quadrados";
+import Reiniciar from "./components/Reiniciar";
+
 import "./styles/App.scss";
 
 function App() {
@@ -8,32 +13,32 @@ function App() {
   const [mensagem, setMensagem] = useState("");
 
   useEffect(() => {
+    const regras = (simbolo: string) => {
+      if (
+        (quadrado[0] === simbolo &&
+          ((quadrado[1] === simbolo && quadrado[2] === simbolo) ||
+            (quadrado[3] === simbolo && quadrado[6] === simbolo))) ||
+        (quadrado[4] === simbolo &&
+          ((quadrado[0] === simbolo && quadrado[8] === simbolo) ||
+            (quadrado[1] === simbolo && quadrado[7] === simbolo) ||
+            (quadrado[2] === simbolo && quadrado[6] === simbolo) ||
+            (quadrado[3] === simbolo && quadrado[5] === simbolo))) ||
+        (quadrado[8] === simbolo &&
+          ((quadrado[2] === simbolo && quadrado[5] === simbolo) ||
+            (quadrado[6] === simbolo && quadrado[7] === simbolo)))
+      ) {
+        setOver(true);
+        setMensagem(`O vencedor foi o jogador ${simbolo === "X" ? "1" : "2"}`);
+      } else {
+        return;
+      }
+    };
+
     regras("X");
     regras("O");
   }, [quadrado]);
 
-  const regras = (simbolo: string) => {
-    if (
-      (quadrado[0] === simbolo &&
-        ((quadrado[1] === simbolo && quadrado[2] === simbolo) ||
-          (quadrado[3] === simbolo && quadrado[6] === simbolo))) ||
-      (quadrado[4] === simbolo &&
-        ((quadrado[0] === simbolo && quadrado[8] === simbolo) ||
-          (quadrado[1] === simbolo && quadrado[7] === simbolo) ||
-          (quadrado[2] === simbolo && quadrado[6] === simbolo) ||
-          (quadrado[3] === simbolo && quadrado[5] === simbolo))) ||
-      (quadrado[8] === simbolo &&
-        ((quadrado[2] === simbolo && quadrado[5] === simbolo) ||
-          (quadrado[6] === simbolo && quadrado[7] === simbolo)))
-    ) {
-      setOver(true);
-      setMensagem(`O vencedor foi o jogador ${simbolo === "X" ? "1" : "2"}`);
-    } else {
-      return;
-    }
-  };
-
-  function play(index: number) {
+  const play = (index: number) => {
     if (quadrado[index] === "" && !over && turno % 2 === 0) {
       const newArray = quadrado.map((i, key) => (key === index ? "X" : i));
       setQuadrado(newArray);
@@ -43,40 +48,14 @@ function App() {
       setQuadrado(newArray);
       setTurno((prev) => prev + 1);
     }
-  }
+  };
 
   return (
     <div className="container">
       <h1>JOGO DA VELHA</h1>
-      <div className="jogo">
-        {quadrado.map((i, key) => {
-          return (
-            <div className="quadrado" key={key} onClick={() => play(key)}>
-              <span>{i}</span>
-            </div>
-          );
-        })}
-      </div>
-      <div className="mensagem">
-        {over ? (
-          <div>
-            <p>{mensagem}</p>
-          </div>
-        ) : turno === 9 ? (
-          <div>
-            <p>O JOGO TERMINOU EMPATADO!</p>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-      <div className="reiniciar">
-        {over || turno === 9 ? (
-          <button onClick={() => window.location.reload()}>
-            JOGAR NOVAMENTE
-          </button>
-        ) : null}
-      </div>
+      <Quadrados itens={quadrado} play={play} />
+      <Mensagem info={mensagem} turno={turno} over={over} />
+      <Reiniciar turno={turno} over={over} />
     </div>
   );
 }

@@ -1,0 +1,15 @@
+.container-reiniciar {
+    button {
+      background-color: #152139;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.7rem;
+      height: 35px;
+      width: 160px;
+  
+      &:hover {
+        background-color: #283f6d;
+      }
+    }
+  }

@@ -1,0 +1,37 @@
+.container-quadrados {
+  display: grid;
+  gap: 0.5rem 0;
+  grid-template-columns: repeat(3, 110px);
+  justify-items: center;
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 160px);
+    width: 500px;
+  }
+}
+
+.quadrado {
+  align-items: center;
+  background-color: #282c34;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+
+  &:hover {
+    background-color: #434a56;
+  }
+
+  span {
+    color: #fff;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 6rem;
+    height: 150px;
+    width: 150px;
+  }
+}
