@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Tic-Tac-Toe/static/css/main.70a651a4.css",
-    "main.js": "/Tic-Tac-Toe/static/js/main.68679437.js",
-    "static/js/787.393238a3.chunk.js": "/Tic-Tac-Toe/static/js/787.393238a3.chunk.js",
-    "index.html": "/Tic-Tac-Toe/index.html",
-    "main.70a651a4.css.map": "/Tic-Tac-Toe/static/css/main.70a651a4.css.map",
-    "main.68679437.js.map": "/Tic-Tac-Toe/static/js/main.68679437.js.map",
-    "787.393238a3.chunk.js.map": "/Tic-Tac-Toe/static/js/787.393238a3.chunk.js.map"
+    "main.css": "/Jogo-da-Velha/static/css/main.70a651a4.css",
+    "main.js": "/Jogo-da-Velha/static/js/main.1bf606bd.js",
+    "static/js/787.393238a3.chunk.js": "/Jogo-da-Velha/static/js/787.393238a3.chunk.js",
+    "index.html": "/Jogo-da-Velha/index.html",
+    "main.70a651a4.css.map": "/Jogo-da-Velha/static/css/main.70a651a4.css.map",
+    "main.1bf606bd.js.map": "/Jogo-da-Velha/static/js/main.1bf606bd.js.map",
+    "787.393238a3.chunk.js.map": "/Jogo-da-Velha/static/js/787.393238a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70a651a4.css",
-    "static/js/main.68679437.js"
+    "static/js/main.1bf606bd.js"
   ]
 }
